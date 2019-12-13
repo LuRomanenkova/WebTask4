@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WebApplicationTask4.Models.Perfume>
+@{
+    ViewData["Title"] = "Available perfume";
+}
+<h3><b>Available perfume</b></h3>
+<table class="table-condensed" cellpadding="15" cellspacing="15">
+    <tr>
+        <td>Perfume</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    @foreach (var perfume in Model)
+    {
+        <tr>
+            <td>@perfume.Name</td>
+            <td><a href="~/Home/show/@perfume.Id">Info</a></td>
+            <td><a href="~/Home/edit/@perfume.Id">Edit</a></td>
+            <td><a href="~/Home/destroy/@perfume.Id">Delete</a></td>
+        </tr>
+    }
+</table>
+<button>
+    <a href="~/Home/create">Add new perfume</a>
+</button>
+ 

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplicationTask4.Models.Perfume>
+@{
+    ViewData["Title"] = "About Perfume";
+}
+<h3>Information</h3>
+<table class="table-condensed" cellpadding="15" cellspacing="15">
+    <tr>
+        <td>Perfume</td>
+        <td>Brand</td> 
+        <td>Price</td>
+        <td>Volume</td>
+        <td>Available</td>
+    </tr>
+
+    
+    <tr>
+        <td>@ViewBag.Name</td>
+        <td>@ViewBag.BrandName</td> 
+        <td>@ViewBag.Price</td>
+        <td>@ViewBag.Volume</td>
+        <td>@ViewBag.Count</td>
+    </tr>
+    
+</table>
+

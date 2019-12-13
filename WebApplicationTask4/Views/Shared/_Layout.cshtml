@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"]</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </head>
+    <body>
+        <!--меню-->
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div>
+                    <div class="nav navbar-nav" style="display: block">
+                        <div style="display: inline-block"><a href="~/Home/Index" class="navbar-brand">Perfumes</a></div>
+                        <div style="display: inline-block"><a href="~/Home/IndexBrand" class="navbar-brand">Brands</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--основной контент-->
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>© 2019 - PerfumeStore Ludmila Romanenkova</p>
+            </footer>
+        </div>
+    </body>
+</html>

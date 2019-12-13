@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WebApplicationTask4.Models.Brand>
+@{
+   ViewData["Title"] = "Brands";
+}
+<h3><b>Available brands</b></h3>
+<table class="table-condensed" cellpadding="15" cellspacing="15">
+    <tr>
+        <td>Brand</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    @foreach (var brand in Model)
+    {
+        <tr>
+            <td>@brand.Name</td>
+            <td><a href="~/Home/showBrand/@brand.Id">Info</a></td>
+            <td><a href="~/Home/editBrand/@brand.Id">Edit</a></td>
+            <td><a href="~/Home/destroyBrand/@brand.Id">Delete</a></td>
+        </tr>
+    }
+</table>
+
+<button>
+    <a href="~/Home/createBrand">Add new brand</a>
+</button>

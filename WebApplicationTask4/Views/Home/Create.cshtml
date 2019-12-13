@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Create Perfume";
+}
+ 
+<form method="post" class="form-horizontal" role="form">
+    @* <input type="hidden" value="@ViewBag.PerfumeId" name="PerfumeId" /> *@
+    <p>Fill the fields for create perfume:</p>
+    <div class="form-group">
+        <label for="Name" class="col-md-2 control-label">Name:</label>
+        <div class="col-md-4">
+            <input type="text" name="Name" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Brand" class="col-md-2 control-label">Brand:</label>
+        <div class="col-md-4">
+            <input type="text" name="Brand" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Price" class="col-md-2 control-label">Price:</label>
+        <div class="col-md-4">
+            <input type="text" name="Price" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Volume" class="col-md-2 control-label">Volume:</label>
+        <div class="col-md-4">
+            <input type="text" name="Volume" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Count" class="col-md-2 control-label">Available:</label>
+        <div class="col-md-4">
+            <input type="text" name="Count" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <span class="col-md-offset-2 col-md-10">
+                <button type="submit" value="Submit" name="Submit">Submit</button>                
+                <button type="submit"  value="Cancel" name="Cancel">Cancel</button>
+            </span>
+        </div>
+    </div>
+</form>
