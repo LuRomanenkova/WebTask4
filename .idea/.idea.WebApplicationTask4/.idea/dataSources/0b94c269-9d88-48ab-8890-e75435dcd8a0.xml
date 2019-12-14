@@ -12,7 +12,7 @@
     <database id="3" parent="1" name="PerfumeStore">
       <ObjectId>16420</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>633</IntrospectionStateNumber>
+      <IntrospectionStateNumber>666</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="4" parent="1" name="postgres">
@@ -72,7 +72,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>352</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>634</IntrospectionStateNumber>
+      <IntrospectionStateNumber>667</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="14" parent="3" name="btree">

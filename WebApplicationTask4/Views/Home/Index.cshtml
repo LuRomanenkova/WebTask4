@@ -3,6 +3,12 @@
     ViewData["Title"] = "Available perfume";
 }
 <h3><b>Available perfume</b></h3>
+<form asp-controller="Home" asp-action="Index">
+        <p>
+            <input type="text" name="SearchString">
+            <input type="submit" value="Search" />
+        </p>
+    </form>
 <table class="table-condensed" cellpadding="15" cellspacing="15">
     <tr>
         <td>Perfume</td>

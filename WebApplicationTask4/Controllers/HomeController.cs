@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WebApplicationTask4.Models;
 
@@ -17,32 +18,31 @@ namespace WebApplicationTask4.Controllers
         {
             db = context;
         }
-        public IActionResult Index()
+        
+        public IActionResult Index(string searchString)
         {
-            return View(db.Perfumes.ToList());
+            if (String.IsNullOrEmpty(searchString))
+            {
+                return View(db.Perfumes.ToList()); 
+            }
+            var c = from m in db.Perfumes
+                select m;
+            c = c.Where(s => s.Name.Contains(searchString));
+            return View(c.ToList());
         }
         
-        public IActionResult IndexBrand()
+        public IActionResult IndexBrand(string searchString)
         {
-            return View(db.Brands.ToList());
+            if (String.IsNullOrEmpty(searchString))
+            {
+                return View(db.Brands.ToList());
+            }
+            var c = from m in db.Brands
+                select m;
+            c = c.Where(s => s.Name.Contains(searchString));
+            return View(c.ToList());
         }
         
-//        [HttpGet]
-//        public IActionResult Buy(int? id)
-//        {
-//            if (id == null) return RedirectToAction("Index");
-//            ViewBag.PerfumeId = id;
-//            return View();
-//        }
-//        [HttpPost]
-//        public string Buy(Order order)
-//        {
-//            db.Orders.Add(order);
-//            // сохраняем в бд все изменения
-//            //db.Perfumes.Find(order.PerfumeId)
-//            db.SaveChanges();
-//            return "Спасибо, " + order.User + ", за покупку!";
-//        }
 
         [HttpGet]
         public IActionResult create()
@@ -124,7 +124,7 @@ namespace WebApplicationTask4.Controllers
             ViewBag.Name = perfume.Name;
             ViewBag.Volume = perfume.Volume;
             ViewBag.Count = perfume.Count;
-            ViewBag.PerfumeId = id;
+            ViewBag.Id = id;
             ViewBag.Price = perfume.Price;
             ViewBag.Brand = perfume.Brand;
 //            db.Perfumes.Remove(perfume);
